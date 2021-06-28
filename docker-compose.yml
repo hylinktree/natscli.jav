@@ -1,18 +1,22 @@
 version: '3'
 
 services:
-  npmon:
+  nats-test:
     network_mode: host
-    image: iscr.io:5002/iii/npmon
-    #ports:
-    #- "80:80"
-    environment:
-      NPMON_ROLE: slave
-      NPMON_TARGET: 140.92.24.47
-      NPMON_PORT: 80
-      NPMON_IPERF_PORT: 5201
-      NPMON_ETHR_PORT: 8888
-    volumes:
-#      - ./data:/data
-      - ./logs:/tmp/logs
-# docker run --rm -it -p 8077:80 -e NPMON_ROLE=master -e NPMON_TARGET=140.92.24.29 hylinktree/npmon
+    image: iscr.io:5002/nats-test
+    restart: "no"
+    entrypoint: ${RUNCMD}
+    deploy:
+      replicas: ${RUNNUM}
+    #entrypoint: /nats-server --name srvcargo -m 8222
+    #entrypoint: /nats-server -js --name srvcargo -m 8222 -DV
+    #entrypoint: /nats-server -js --name srvcargo -DV
+    # restart: always
+    # ports:
+    #    - "4222:4222"
+    #environment:
+    #  REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+    #volumes:
+    #        - ./jetstream:/tmp/nats/jetstream
+
+
