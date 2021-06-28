@@ -37,15 +37,17 @@ public class NatsReq {
 
             String hdrNote = exArgs.hasHeaders() ? " with " + exArgs.headers.size() + " header(s)," : "";
             System.out.printf("\nRequesting '%s' on %s,%s server is %s\n\n", exArgs.message, exArgs.subject, hdrNote, exArgs.server);
+            ExampleUtils.Trace("reply.timeout=120");
 
             Message reply = nc.request(NatsMessage.builder()
                     .subject(exArgs.subject)
                     .headers(exArgs.headers)
                     .data(exArgs.message, StandardCharsets.UTF_8)
                     .build(),
-                    Duration.ofSeconds(5));
+                    Duration.ofMinutes(3));
 
             if (reply == null) {
+                ExampleUtils.Trace("No replier for subject=", exArgs.subject);
                 System.out.printf("\nNo reply received for subject '%s'\n\n", exArgs.subject);
             }
             else {
