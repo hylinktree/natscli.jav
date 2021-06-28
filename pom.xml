@@ -9,10 +9,10 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.iii</groupId>
-	<artifactId>natsclient</artifactId>
+	<artifactId>natscli</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>natsclient</name>
-	<description>Demo project for Spring Boot</description>
+	<name>natscli</name>
+	<description>NATS Java Client</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
