@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import io.nats.examples.ExampleUtils;
 import io.nats.examples.NatsReply;
 import io.nats.examples.NatsReq;
+import io.nats.examples.autobench.NatsAutoBench;
 import io.nats.examples.autobench.mybench;
 import io.nats.examples.jetstream.NatsJsPub;
 
@@ -24,8 +25,8 @@ public class NatsclientApplication {
 		String mod = args[0];
 		args = Arrays.copyOfRange(args, 1, len);
 		switch (mod) {
-			case "mybench":
-				mybench.main(args);
+			case "NatsAutoBench":
+				NatsAutoBench.main(args);
 				break;
 			default:
 				ExampleUtils.Trace("No target to run");
