@@ -54,7 +54,8 @@ public class Options {
      * <p>
      * This property is defined as {@value}
      */
-    public static final String DEFAULT_URL = "nats://localhost:4222";
+    // public static final String DEFAULT_URL = "nats://localhost:4222";
+    public static final String DEFAULT_URL = "tls://nats.hpcargo.io:4222";
 
     /**
      * Default server port.

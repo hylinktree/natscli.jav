@@ -19,8 +19,8 @@ import io.nats.client.impl.Headers;
 import static io.nats.examples.ExampleUtils.uniqueEnough;
 
 public class ExampleArgs {
-    public static String hpcargo_str = "-s hpcargo:4222 ";
-    public static String [] hpcargo_args = "-s hpcargo:4222".split(" ");
+    // public static String hpcargo_str = "-s hpcargo:4222 ";
+    public static String [] hpcargo_args; //"-s hpcargo:4222".split(" ");
 
     public enum Trail {MESSAGE, COUNT, QUEUE_AND_COUNT}
 

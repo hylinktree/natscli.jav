@@ -20,6 +20,7 @@ final class Dispatcher {
 	private static final Map<String, Class<?>> ENTRY_POINTS = new HashMap<String, Class<?>>();
 	static {
 		ENTRY_POINTS.put("NatsAutoBench", NatsAutoBench.class);
+		ENTRY_POINTS.put("NatsJsPub", NatsJsPub.class);
 		// ENTRY_POINTS.put("bar", Bar.class);
 		// ENTRY_POINTS.put("baz", Baz.class);
 	}
