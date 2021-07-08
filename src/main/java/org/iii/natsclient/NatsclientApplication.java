@@ -21,6 +21,7 @@ final class Dispatcher {
 	static {
 		ENTRY_POINTS.put("NatsAutoBench", NatsAutoBench.class);
 		ENTRY_POINTS.put("NatsJsPub", NatsJsPub.class);
+		// ENTRY_POINTS.put("", N)
 		// ENTRY_POINTS.put("bar", Bar.class);
 		// ENTRY_POINTS.put("baz", Baz.class);
 	}
